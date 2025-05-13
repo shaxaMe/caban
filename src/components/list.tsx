@@ -81,7 +81,6 @@ export default function List() {
         const modifier = isBelowLastItem ? 1 : 0;
         newIndex = overIndex >= 0 ? overIndex + modifier : overItems.length + 1;
       }
-
       const activeItem = activeItems[activeIndex];
       let newStatus = "new";
       if (overContainer === "container1") {
@@ -94,7 +93,7 @@ export default function List() {
         ...activeItem,
         status: newStatus,
       };
-
+     console.log("oldContainer",activeContainer=='root'?'first':activeContainer=='container1'?'second':'third', "currentContainer",overContainer=='root'?'first':overContainer=='container1'?'second':'third', "updatedItem",updatedItem);
       return {
         ...prev,
         [activeContainer]: [
